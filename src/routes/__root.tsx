@@ -5,7 +5,8 @@ import { logo, menu, close } from "../assets";
 import { useState } from "react";
 import { Footer } from "../components";
 
-const linkStyle: string = "[&.active]:font-bold [&.active]:text-white hover:text-white text-gray-300";
+const linkStyle: string =
+  "[&.active]:font-bold [&.active]:text-white hover:text-white text-gray-300 md:text-[16px] sm:text-[14px] ";
 
 export const Route = createRootRoute({
   component: () => {
@@ -13,7 +14,7 @@ export const Route = createRootRoute({
 
     return (
       <>
-        <div className="w-full justify-evenly items-center flex fixed top-0 z-20 bg-primary px-4">
+        <div className="w-full justify-between items-center flex fixed top-0 z-20 bg-primary px-4">
           <Link
             to="/"
             className="flex items-center gap-2"
@@ -87,17 +88,15 @@ export const Route = createRootRoute({
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/login"
                 className={linkStyle}
                 onClick={() => {
                   window.scrollTo(0, 0);
                 }}
               >
-                Contact
+                Login
               </Link>
             </li>
-
-            <div></div>
           </ul>
 
           <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -174,14 +173,13 @@ export const Route = createRootRoute({
                 </li>
                 <li>
                   <Link
-                    to="/contact"
-                    className={`${linkStyle} text-sm`}
+                    to="/login"
+                    className={linkStyle}
                     onClick={() => {
-                      setToggle(!toggle);
                       window.scrollTo(0, 0);
                     }}
                   >
-                    Contact
+                    Login
                   </Link>
                 </li>
               </ul>

@@ -20,10 +20,10 @@ import { Route as DatabaseModelIdImport } from './routes/database/$modelId'
 // Create Virtual Routes
 
 const ToolkitIndexLazyImport = createFileRoute('/toolkit/')()
+const LoginIndexLazyImport = createFileRoute('/login/')()
 const LearnIndexLazyImport = createFileRoute('/learn/')()
 const DatabaseIndexLazyImport = createFileRoute('/database/')()
 const ContributeIndexLazyImport = createFileRoute('/contribute/')()
-const ContactIndexLazyImport = createFileRoute('/contact/')()
 
 // Create/Update Routes
 
@@ -38,6 +38,12 @@ const ToolkitIndexLazyRoute = ToolkitIndexLazyImport.update({
   path: '/toolkit/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/toolkit/index.lazy').then((d) => d.Route))
+
+const LoginIndexLazyRoute = LoginIndexLazyImport.update({
+  id: '/login/',
+  path: '/login/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/login/index.lazy').then((d) => d.Route))
 
 const LearnIndexLazyRoute = LearnIndexLazyImport.update({
   id: '/learn/',
@@ -60,12 +66,6 @@ const ContributeIndexLazyRoute = ContributeIndexLazyImport.update({
 } as any).lazy(() =>
   import('./routes/contribute/index.lazy').then((d) => d.Route),
 )
-
-const ContactIndexLazyRoute = ContactIndexLazyImport.update({
-  id: '/contact/',
-  path: '/contact/',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/contact/index.lazy').then((d) => d.Route))
 
 const LearnAritcleIdRoute = LearnAritcleIdImport.update({
   id: '/learn/$aritcleId',
@@ -104,13 +104,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnAritcleIdImport
       parentRoute: typeof rootRoute
     }
-    '/contact/': {
-      id: '/contact/'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactIndexLazyImport
-      parentRoute: typeof rootRoute
-    }
     '/contribute/': {
       id: '/contribute/'
       path: '/contribute'
@@ -132,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnIndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/toolkit/': {
       id: '/toolkit/'
       path: '/toolkit'
@@ -148,10 +148,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
   '/learn/$aritcleId': typeof LearnAritcleIdRoute
-  '/contact': typeof ContactIndexLazyRoute
   '/contribute': typeof ContributeIndexLazyRoute
   '/database': typeof DatabaseIndexLazyRoute
   '/learn': typeof LearnIndexLazyRoute
+  '/login': typeof LoginIndexLazyRoute
   '/toolkit': typeof ToolkitIndexLazyRoute
 }
 
@@ -159,10 +159,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
   '/learn/$aritcleId': typeof LearnAritcleIdRoute
-  '/contact': typeof ContactIndexLazyRoute
   '/contribute': typeof ContributeIndexLazyRoute
   '/database': typeof DatabaseIndexLazyRoute
   '/learn': typeof LearnIndexLazyRoute
+  '/login': typeof LoginIndexLazyRoute
   '/toolkit': typeof ToolkitIndexLazyRoute
 }
 
@@ -171,10 +171,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
   '/learn/$aritcleId': typeof LearnAritcleIdRoute
-  '/contact/': typeof ContactIndexLazyRoute
   '/contribute/': typeof ContributeIndexLazyRoute
   '/database/': typeof DatabaseIndexLazyRoute
   '/learn/': typeof LearnIndexLazyRoute
+  '/login/': typeof LoginIndexLazyRoute
   '/toolkit/': typeof ToolkitIndexLazyRoute
 }
 
@@ -184,30 +184,30 @@ export interface FileRouteTypes {
     | '/'
     | '/database/$modelId'
     | '/learn/$aritcleId'
-    | '/contact'
     | '/contribute'
     | '/database'
     | '/learn'
+    | '/login'
     | '/toolkit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/database/$modelId'
     | '/learn/$aritcleId'
-    | '/contact'
     | '/contribute'
     | '/database'
     | '/learn'
+    | '/login'
     | '/toolkit'
   id:
     | '__root__'
     | '/'
     | '/database/$modelId'
     | '/learn/$aritcleId'
-    | '/contact/'
     | '/contribute/'
     | '/database/'
     | '/learn/'
+    | '/login/'
     | '/toolkit/'
   fileRoutesById: FileRoutesById
 }
@@ -216,10 +216,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DatabaseModelIdRoute: typeof DatabaseModelIdRoute
   LearnAritcleIdRoute: typeof LearnAritcleIdRoute
-  ContactIndexLazyRoute: typeof ContactIndexLazyRoute
   ContributeIndexLazyRoute: typeof ContributeIndexLazyRoute
   DatabaseIndexLazyRoute: typeof DatabaseIndexLazyRoute
   LearnIndexLazyRoute: typeof LearnIndexLazyRoute
+  LoginIndexLazyRoute: typeof LoginIndexLazyRoute
   ToolkitIndexLazyRoute: typeof ToolkitIndexLazyRoute
 }
 
@@ -227,10 +227,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatabaseModelIdRoute: DatabaseModelIdRoute,
   LearnAritcleIdRoute: LearnAritcleIdRoute,
-  ContactIndexLazyRoute: ContactIndexLazyRoute,
   ContributeIndexLazyRoute: ContributeIndexLazyRoute,
   DatabaseIndexLazyRoute: DatabaseIndexLazyRoute,
   LearnIndexLazyRoute: LearnIndexLazyRoute,
+  LoginIndexLazyRoute: LoginIndexLazyRoute,
   ToolkitIndexLazyRoute: ToolkitIndexLazyRoute,
 }
 
@@ -247,10 +247,10 @@ export const routeTree = rootRoute
         "/",
         "/database/$modelId",
         "/learn/$aritcleId",
-        "/contact/",
         "/contribute/",
         "/database/",
         "/learn/",
+        "/login/",
         "/toolkit/"
       ]
     },
@@ -263,9 +263,6 @@ export const routeTree = rootRoute
     "/learn/$aritcleId": {
       "filePath": "learn/$aritcleId.tsx"
     },
-    "/contact/": {
-      "filePath": "contact/index.lazy.tsx"
-    },
     "/contribute/": {
       "filePath": "contribute/index.lazy.tsx"
     },
@@ -274,6 +271,9 @@ export const routeTree = rootRoute
     },
     "/learn/": {
       "filePath": "learn/index.lazy.tsx"
+    },
+    "/login/": {
+      "filePath": "login/index.lazy.tsx"
     },
     "/toolkit/": {
       "filePath": "toolkit/index.lazy.tsx"

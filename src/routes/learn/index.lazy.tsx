@@ -8,7 +8,7 @@ function Learn() {
   const articles = ["alignment-problem", "computer vision", "toy models"];
 
   return (
-    <div>
+    <div className="relative z-0">
       {articles.map((article) => (
         <div key={article}>
           <Link

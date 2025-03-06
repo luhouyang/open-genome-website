@@ -8,7 +8,12 @@ function Database() {
   const modelData = ["VGG16", "AlexNet", "LeNet5", "PointNet"];
 
   return (
-    <div>
+    <div className="relative z-0">
+      {/* TITLE & DESCRIPTION */}
+
+      {/* CENTER BUTTON TO GitHub */}
+
+      {/* DATA CARDS FOR POPULAR MODEL DATABASES */}
       {modelData.map((model) => (
         <div key={model}>
           <Link
