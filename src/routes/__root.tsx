@@ -177,6 +177,7 @@ export const Route = createRootRoute({
                       to="/login"
                       className={linkStyle}
                       onClick={() => {
+                        setToggle(!toggle);
                         window.scrollTo(0, 0);
                       }}
                     >

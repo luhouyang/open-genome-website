@@ -12,6 +12,9 @@ const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: 
     <Link
       to={link}
       className="flex-1/3 xl:max-w-[400px] lg:max-w-[350px] max-h-[350px]"
+      onClick={() => {
+        window.scrollTo(0, 0);
+      }}
     >
       <Tilt
         scale={1}
@@ -20,7 +23,7 @@ const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: 
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-          className="w-full yellow-green-gradient p-[1px] rounded-[20px] shadow-card"
+          className="w-full rgby-gradient p-[1px] rounded-[20px] shadow-card"
         >
           <div className="bg-secondary rounded-[20px] py-4 px-12 lg:min-h-[280px] sm:min-h-[250px] min-h-[200px] flex justify-evenly items-center flex-col">
             <img

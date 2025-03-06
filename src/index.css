@@ -98,10 +98,13 @@
   background: -webkit-linear-gradient(-90deg, #b2ffff 0%, rgba(60, 51, 80, 0) 100%);
 }
 
-.yellow-green-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #ffff99 1.9%, #00ff7f 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #ffff99 1.9%, #00ff7f 97.5%);
+.rgby-gradient {
+  background: linear-gradient(90deg, #ffff99 0%, /* Canary */ #00ff7f 50%, /* Spring */ #b2ffff 100% /* Celeste */);
+  background: -webkit-linear-gradient(90deg, #ffff99 0%, #00ff7f 50%, #b2ffff 100%);
+}
+
+.rgby-gradient:hover {
+  background: #ed2929 !important; /* Imperial Red */
 }
 
 /* canvas- styles */
