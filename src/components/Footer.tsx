@@ -206,7 +206,7 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white"
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -225,7 +225,7 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white"
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -244,7 +244,7 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white"
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"

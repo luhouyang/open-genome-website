@@ -34,6 +34,9 @@ export const Route = createRootRoute({
               <Link
                 to="/"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Home
               </Link>
@@ -42,6 +45,9 @@ export const Route = createRootRoute({
               <Link
                 to="/database"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Database
               </Link>
@@ -50,6 +56,9 @@ export const Route = createRootRoute({
               <Link
                 to="/toolkit"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Toolkit
               </Link>
@@ -58,6 +67,9 @@ export const Route = createRootRoute({
               <Link
                 to="/contribute"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Contribute
               </Link>
@@ -66,6 +78,9 @@ export const Route = createRootRoute({
               <Link
                 to="/learn"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Learn
               </Link>
@@ -74,6 +89,9 @@ export const Route = createRootRoute({
               <Link
                 to="/contact"
                 className={linkStyle}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 Contact
               </Link>
@@ -100,6 +118,7 @@ export const Route = createRootRoute({
                     className={`${linkStyle} text-sm`}
                     onClick={() => {
                       setToggle(!toggle);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Home
@@ -111,6 +130,7 @@ export const Route = createRootRoute({
                     className={`${linkStyle} text-sm`}
                     onClick={() => {
                       setToggle(!toggle);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Database
@@ -122,6 +142,7 @@ export const Route = createRootRoute({
                     className={`${linkStyle} text-sm`}
                     onClick={() => {
                       setToggle(!toggle);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Toolkit
@@ -133,6 +154,7 @@ export const Route = createRootRoute({
                     className={`${linkStyle} text-sm`}
                     onClick={() => {
                       setToggle(!toggle);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Contribute
@@ -142,6 +164,10 @@ export const Route = createRootRoute({
                   <Link
                     to="/learn"
                     className={linkStyle}
+                    onClick={() => {
+                      setToggle(!toggle);
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     Learn
                   </Link>
@@ -152,6 +178,7 @@ export const Route = createRootRoute({
                     className={`${linkStyle} text-sm`}
                     onClick={() => {
                       setToggle(!toggle);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Contact
