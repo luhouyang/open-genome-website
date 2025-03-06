@@ -1,8 +1,8 @@
-import { ComputersCanvas } from "./canvas";
+import { ComputerCanvasLazy } from "./canvas";
 import Hero from "./Hero";
 import About from "./About";
 import Timeline from "./Timeline";
 import Footer from "./Footer";
 import Contact from "./Contact";
 
-export { Hero, About, Timeline, ComputersCanvas, Footer, Contact };
+export { Hero, About, Timeline, ComputerCanvasLazy, Footer, Contact };

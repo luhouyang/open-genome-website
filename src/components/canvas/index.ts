@@ -1,4 +1,3 @@
+import ComputerCanvasLazy from "./ComputerCanvasLazy";
 
-import ComputersCanvas from "./Computers";
-
-export { ComputersCanvas };
+export { ComputerCanvasLazy };
