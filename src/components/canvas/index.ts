@@ -1,3 +1,3 @@
-import ComputerCanvasLazy from "./ComputerCanvasLazy";
+import ShibaCanvasLazy from "./ShibaCanvasLazy";
 
-export { ComputerCanvasLazy };
+export { ShibaCanvasLazy };

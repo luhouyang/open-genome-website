@@ -190,7 +190,7 @@ export const Route = createRootRoute({
         </div>
 
         <hr />
-        <div className="mt-[60px]">
+        <div className="mt-[50px]">
           <Outlet />
         </div>
 
