@@ -3,7 +3,7 @@ import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 
 import { logo, menu, close } from "../assets";
 import { useState } from "react";
-import { Footer } from "../components";
+import Footer from "../components/Footer";
 
 const linkStyle: string =
   "[&.active]:font-bold [&.active]:text-white hover:text-white text-gray-300 md:text-[16px] sm:text-[14px] ";
@@ -190,7 +190,7 @@ export const Route = createRootRoute({
         </div>
 
         <hr />
-        <div className="mt-[50px]">
+        <div className="mt-[50px] min-h-[100vh]">
           <Outlet />
         </div>
 

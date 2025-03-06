@@ -1,5 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
+import { About, Authentication } from "../../components/login";
+
 export const Route = createLazyFileRoute("/login/")({
   component: Login,
 });
@@ -7,14 +9,11 @@ export const Route = createLazyFileRoute("/login/")({
 function Login() {
   return (
     <div className="relative z-0">
-      {/* TITLE & DESCRIPTION */}
+      {/* About.tsx | TITLE & DESCRIPTION */}
+      <About />
 
-      {/* USER OR CONTRIBUTOR */}
-
-      {/* USER FORM */}
-
-      {/* CONTRIBUTOR FORM */}
-      <div>Hello "/login/"!</div>
+      {/* Authentication.tsx | USER OR CONTRIBUTOR LOGIN */}
+      <Authentication />
     </div>
   );
 }

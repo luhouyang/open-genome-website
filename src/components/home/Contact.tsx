@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { SectionWrapper } from "../hoc";
 
-import { styles } from "../styles";
-import { textVariant } from "../utils";
+import { SectionWrapper } from "../../hoc";
+import { styles } from "../../styles";
+import { fadeIn, textVariant } from "../../utils";
 
 const Contact = () => {
   return (
@@ -11,7 +11,9 @@ const Contact = () => {
         <h2 className={styles.sectionHeadText}>Contact Us</h2>
       </motion.div>
 
-      <div className="mt-8 flex flex-col">FORMS</div>
+      <motion.div variants={fadeIn("", "", 0.1, 1)}>
+        <div className={`${styles.sectionDescDiv}`}>FORMS</div>
+      </motion.div>
     </>
   );
 };

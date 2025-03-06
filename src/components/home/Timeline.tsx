@@ -4,10 +4,10 @@ import { FC } from "react";
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { styles } from "../styles";
-import { milestones } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils";
+import { styles } from "../../styles";
+import { milestones } from "../../constants";
+import { SectionWrapper } from "../../hoc";
+import { textVariant } from "../../utils";
 
 interface Milestone {
   title: string;

@@ -1,5 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
+import { About, Quotes, Documents, Signup, Contributors } from "../../components/contribute";
+
 export const Route = createLazyFileRoute("/contribute/")({
   component: Contribute,
 });
@@ -7,16 +9,20 @@ export const Route = createLazyFileRoute("/contribute/")({
 function Contribute() {
   return (
     <div className="relative z-0">
-      {/* TITLE & DESCRIPTION */}
+      {/* About.tsx | TITLE & OUR COMMITTMENT */}
+      <About />
 
-      {/* OUR COMMITTMENT & TESTIMONY*/}
+      {/* Quotes.tsx | QUOTES FROM CONTRIBUTORS */}
+      <Quotes />
 
-      {/* LINKS TO WHITE PAPER, AGREEMENT & ON-BOARDING */}
+      {/* Documents.tsx | LINKS TO WHITE PAPER, AGREEMENT & ON-BOARDING */}
+      <Documents />
 
-      {/* SIGN-UP FORM */}
+      {/* Signup.tsx | SIGN-UP FORM */}
+      <Signup />
 
-      {/* CONTRIBUTORS */}
-      <div>Hello "/contribute/"!</div>
+      {/* Contributors.tsx | CONTRIBUTORS */}
+      <Contributors />
     </div>
   );
 }

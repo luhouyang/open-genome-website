@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+
 import { logo } from "../assets";
 
 const Footer = () => {
@@ -244,7 +245,7 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-gray-400/20 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">© {new Date().getFullYear()} Open-Genome Project. All rights reserved.</p>
+            <p className="text-gray-300 text-sm">© 2025 Open-Genome Project. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
                 href="https://github.com/luhouyang/open-genome-project.git"

@@ -1,5 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
+import { About, Usage, Ongoing, Changelog } from "../../components/toolkit";
+
 export const Route = createLazyFileRoute("/toolkit/")({
   component: Toolkit,
 });
@@ -7,16 +9,17 @@ export const Route = createLazyFileRoute("/toolkit/")({
 function Toolkit() {
   return (
     <div className="relative z-0">
-      {/* TITLE & DESCRIPTION*/}
+      {/* About.tsx | TITLE & DESCRIPTION & GitHub*/}
+      <About />
 
-      {/* CENTER BUTTON TO GitHub */}
+      {/* Usage.tsx | POPULAR USAGES OF THE TOOL */}
+      <Usage />
 
-      {/* POPULAR USAGES OF THE TOOL */}
+      {/* Ongoing.tsx | CURRENTLY DEVELOPING FEATURES REQUIRING TALENT & Link to Contributing*/}
+      <Ongoing />
 
-      {/* CURRENTLY DEVELOPING FEATURES REQUIRING TALENT */}
-
-      {/* CALL TO ACTION -> CONTRIBUTING PAGE */}
-      <div>Hello "/toolkit/"!</div>
+      {/* Changelog.tsx | CHANGELOG */}
+      <Changelog />
     </div>
   );
 }

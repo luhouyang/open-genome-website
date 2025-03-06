@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
+import { styles } from "../../styles";
 import { ShibaCanvasLazy } from "./canvas";
-import { herobg } from "../assets";
+import { herobg } from "../../assets";
 
 const Hero = () => {
   return (
@@ -25,7 +25,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* <ComputerCanvasLazy /> */}
       <ShibaCanvasLazy />
 
       {/* <div className="absolute xs:bottom-10 bottom-16 w-full flex justify-center items-center grey-1">

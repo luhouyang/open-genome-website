@@ -1,10 +1,10 @@
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils";
-import { SectionWrapper } from "../hoc";
+import { styles } from "../../styles";
+import { services } from "../../constants";
+import { fadeIn, textVariant } from "../../utils";
+import { SectionWrapper } from "../../hoc";
 import { Link } from "@tanstack/react-router";
 
 const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: string }> = ({ index, title, icon, link }) => {
