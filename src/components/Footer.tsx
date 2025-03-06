@@ -10,14 +10,14 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <Link
               to="/"
-              className="flex items-center gap-2 mb-4"
+              className="items-center gap-2 mb-4"
             >
               <img
                 src={logo}
                 alt="Open-Genome Project Logo"
                 className="w-10 h-10 object-contain"
               />
-              <p className="text-secondary font-bold">&gt; OGP</p>
+              <p className="text-secondary font-bold">Open-Genome Project</p>
             </Link>
             <p className="text-gray-200 text-sm">
               The Open-Genome Project aims to democratize AI genome research through open source, collaborative tools, and

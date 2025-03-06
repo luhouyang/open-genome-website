@@ -8,7 +8,7 @@ export const Route = createFileRoute("/database/$modelId")({
     };
   },
   pendingComponent: () => <div>Loading . . .</div>,
-  errorComponent: () => <div>oopsie . . . somting broken</div>
+  errorComponent: () => <div>oopsie . . . something broken</div>
 });
 
 function ModelComponent() {

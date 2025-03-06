@@ -1,9 +1,24 @@
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createLazyFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createLazyFileRoute('/learn/')({
+export const Route = createLazyFileRoute("/learn/")({
   component: Learn,
-})
+});
 
 function Learn() {
-  return <div>Hello "/learn/"!</div>
+  const articles = ["alignment-problem", "computer vision", "toy models"];
+
+  return (
+    <div>
+      {articles.map((article) => (
+        <div key={article}>
+          <Link
+            to="/learn/$aritcleId"
+            params={{ aritcleId: article }}
+          >
+            {article}
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
 }

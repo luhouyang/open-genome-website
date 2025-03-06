@@ -14,6 +14,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as LearnAritcleIdImport } from './routes/learn/$aritcleId'
 import { Route as DatabaseModelIdImport } from './routes/database/$modelId'
 
 // Create Virtual Routes
@@ -66,6 +67,12 @@ const ContactIndexLazyRoute = ContactIndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/contact/index.lazy').then((d) => d.Route))
 
+const LearnAritcleIdRoute = LearnAritcleIdImport.update({
+  id: '/learn/$aritcleId',
+  path: '/learn/$aritcleId',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DatabaseModelIdRoute = DatabaseModelIdImport.update({
   id: '/database/$modelId',
   path: '/database/$modelId',
@@ -88,6 +95,13 @@ declare module '@tanstack/react-router' {
       path: '/database/$modelId'
       fullPath: '/database/$modelId'
       preLoaderRoute: typeof DatabaseModelIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/learn/$aritcleId': {
+      id: '/learn/$aritcleId'
+      path: '/learn/$aritcleId'
+      fullPath: '/learn/$aritcleId'
+      preLoaderRoute: typeof LearnAritcleIdImport
       parentRoute: typeof rootRoute
     }
     '/contact/': {
@@ -133,6 +147,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
+  '/learn/$aritcleId': typeof LearnAritcleIdRoute
   '/contact': typeof ContactIndexLazyRoute
   '/contribute': typeof ContributeIndexLazyRoute
   '/database': typeof DatabaseIndexLazyRoute
@@ -143,6 +158,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
+  '/learn/$aritcleId': typeof LearnAritcleIdRoute
   '/contact': typeof ContactIndexLazyRoute
   '/contribute': typeof ContributeIndexLazyRoute
   '/database': typeof DatabaseIndexLazyRoute
@@ -154,6 +170,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/database/$modelId': typeof DatabaseModelIdRoute
+  '/learn/$aritcleId': typeof LearnAritcleIdRoute
   '/contact/': typeof ContactIndexLazyRoute
   '/contribute/': typeof ContributeIndexLazyRoute
   '/database/': typeof DatabaseIndexLazyRoute
@@ -166,6 +183,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/database/$modelId'
+    | '/learn/$aritcleId'
     | '/contact'
     | '/contribute'
     | '/database'
@@ -175,6 +193,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/database/$modelId'
+    | '/learn/$aritcleId'
     | '/contact'
     | '/contribute'
     | '/database'
@@ -184,6 +203,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/database/$modelId'
+    | '/learn/$aritcleId'
     | '/contact/'
     | '/contribute/'
     | '/database/'
@@ -195,6 +215,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DatabaseModelIdRoute: typeof DatabaseModelIdRoute
+  LearnAritcleIdRoute: typeof LearnAritcleIdRoute
   ContactIndexLazyRoute: typeof ContactIndexLazyRoute
   ContributeIndexLazyRoute: typeof ContributeIndexLazyRoute
   DatabaseIndexLazyRoute: typeof DatabaseIndexLazyRoute
@@ -205,6 +226,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatabaseModelIdRoute: DatabaseModelIdRoute,
+  LearnAritcleIdRoute: LearnAritcleIdRoute,
   ContactIndexLazyRoute: ContactIndexLazyRoute,
   ContributeIndexLazyRoute: ContributeIndexLazyRoute,
   DatabaseIndexLazyRoute: DatabaseIndexLazyRoute,
@@ -224,6 +246,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/database/$modelId",
+        "/learn/$aritcleId",
         "/contact/",
         "/contribute/",
         "/database/",
@@ -236,6 +259,9 @@ export const routeTree = rootRoute
     },
     "/database/$modelId": {
       "filePath": "database/$modelId.tsx"
+    },
+    "/learn/$aritcleId": {
+      "filePath": "learn/$aritcleId.tsx"
     },
     "/contact/": {
       "filePath": "contact/index.lazy.tsx"
