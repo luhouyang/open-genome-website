@@ -8,6 +8,15 @@
   color-scheme: dark;
 }
 
+canvas {
+  touch-action: none;
+  position: fixed !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 :root {
   /* Define color variables for easier management */
   --imperial: #ed2929;

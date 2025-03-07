@@ -10,10 +10,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="relative z-0">
-      <div>
-        <Hero />
-      </div>
+    <div className="relative">
+      <Hero />
       <About />
       <Timeline />
       <Contact />
