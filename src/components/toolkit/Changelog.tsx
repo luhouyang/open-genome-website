@@ -3,8 +3,14 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../styles";
 import { fadeIn, textVariant } from "../../utils";
+import MarkdownRenderer from "../MarkdownRenderer";
 
 const Changelog = () => {
+  const markdown = `## v0.1.3 (07/03/2025)
+
+  - Type safety with \`mypy\`
+  `;
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -12,7 +18,7 @@ const Changelog = () => {
       </motion.div>
 
       <motion.div variants={fadeIn("", "", 0.1, 1)}>
-        <div className={`${styles.sectionDescDiv}`}>v0.1.3</div>
+        <MarkdownRenderer markdown={markdown} />
       </motion.div>
     </>
   );

@@ -8,14 +8,14 @@ const About = () => {
     <>
       <div className={`${styles.aboutPageTitle}`}>
         <motion.div variants={textVariant()}>
-          <h2 className={`${styles.sectionHeadText} spring`}>Open-Genome Toolkit</h2>
+          <h2 className={`${styles.sectionHeadText} spring`}>OG Toolkit</h2>
         </motion.div>
 
         <motion.div
           variants={fadeIn("", "", 0.1, 1)}
           className={`${styles.aboutPageSubTitle}`}
         >
-          All-in-One AI model analysis toolkit and data preparation pipeline for the Open-Genome Project.
+          Open-Genome Toolkit is an all-in-one AI model analysis toolkit and data preparation pipeline for the Open-Genome Project.
         </motion.div>
 
         <div className="flex flex-col sm:flex-row justify-evenly items-center mt-8 px-4 gap-4">

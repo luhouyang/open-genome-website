@@ -10,7 +10,7 @@ const Articles = () => {
       {articles.map((article) => (
         <div key={article}>
           <Link
-            to="/learn/$aritcleId"
+            to="/academy/$aritcleId"
             params={{ aritcleId: article }}
           >
             {article}

@@ -8,14 +8,14 @@ const About = () => {
     <>
       <div className={`${styles.aboutPageTitle}`}>
         <motion.div variants={textVariant()}>
-          <h2 className={`${styles.sectionHeadText} celeste`}>Open-Genome Database</h2>
+          <h2 className={`${styles.sectionHeadText} celeste`}>OG Database</h2>
         </motion.div>
 
         <motion.div
           variants={fadeIn("", "", 0.1, 1)}
           className={`${styles.aboutPageSubTitle}`}
         >
-          Public datasets of model explanations and analysis data obtained under the Open-Genome Project.
+          Open-Genome Database contains public datasets of model explanations and analysis data obtained under the Open-Genome Project.
         </motion.div>
 
         <a

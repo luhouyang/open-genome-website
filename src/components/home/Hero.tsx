@@ -39,7 +39,7 @@ const Hero = () => {
         </a>
       </div> */}
 
-      <div className="absolute sm:bottom-24 bottom-36 w-full flex justify-center items-center">
+      <div className="absolute sm:top-[85vh] top-[75vh] w-full flex justify-center items-center">
         <a href="#about">
           <motion.div
             animate={{ y: [0, 12, 0] }}

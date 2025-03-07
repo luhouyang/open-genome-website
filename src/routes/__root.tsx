@@ -78,13 +78,13 @@ export const Route = createRootRoute({
               </li>
               <li>
                 <Link
-                  to="/learn"
+                  to="/academy"
                   className={linkStyle}
                   onClick={() => {
                     window.scrollTo(0, 0);
                   }}
                 >
-                  Learn
+                  Academy
                 </Link>
               </li>
               <li>
@@ -162,14 +162,14 @@ export const Route = createRootRoute({
                   </li>
                   <li>
                     <Link
-                      to="/learn"
+                      to="/academy"
                       className={linkStyle}
                       onClick={() => {
                         setToggle(!toggle);
                         window.scrollTo(0, 0);
                       }}
                     >
-                      Learn
+                      Academy
                     </Link>
                   </li>
                   <li>
