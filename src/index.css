@@ -92,8 +92,17 @@
 }
 
 /* BORDER */
+.border-celeste {
+  border-color: var(--celeste);
+}
 .border-spring {
   border-color: var(--spring);
+}
+.border-canary {
+  border-color: var(--canary);
+}
+.border-imperial {
+  border-color: var(--imperial);
 }
 
 /* BG */
@@ -115,6 +124,18 @@
 .bg-dark-blue {
   background-color: var(--dark-blue);
 }
+.background-celeste {
+  background-color: var(--celeste);
+}
+.background-spring {
+  background-color: var(--spring);
+}
+.background-canary {
+  background-color: var(--canary);
+}
+.background-imperial {
+  background-color: var(--imperial);
+}
 
 /* OTHERS */
 .hash-span {
@@ -133,15 +154,6 @@
   background: #b2ffff;
   background: linear-gradient(-90deg, #b2ffff 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(-90deg, #b2ffff 0%, rgba(60, 51, 80, 0) 100%);
-}
-
-.rgby-gradient {
-  background: linear-gradient(90deg, #ffff99 0%, /* Canary */ #00ff7f 50%, /* Spring */ #b2ffff 100% /* Celeste */);
-  background: -webkit-linear-gradient(90deg, #ffff99 0%, #00ff7f 50%, #b2ffff 100%);
-}
-
-.rgby-gradient:hover {
-  background: #ed2929 !important; /* Imperial Red */
 }
 
 /* Circular loader with color cycling */

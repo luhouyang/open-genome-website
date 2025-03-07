@@ -5,21 +5,25 @@ const services = [
     title: "Open-Genome Database",
     icon: web,
     link: "/database",
+    color: "background-celeste",
   },
   {
     title: "Open-Genome Toolkit",
     icon: mobile,
     link: "/toolkit",
+    color: "background-spring",
   },
   {
     title: "Community",
     icon: backend,
     link: "/contribute",
+    color: "background-canary",
   },
   {
     title: "Learn XAI",
     icon: creator,
     link: "/academy",
+    color: "background-imperial",
   },
 ];
 

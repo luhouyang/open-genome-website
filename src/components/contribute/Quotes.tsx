@@ -26,7 +26,7 @@ const Quotes = () => {
         <h2 className={styles.sectionHeadText}>Quotes</h2>
       </motion.div>
 
-      <div className="mt-8 gap-4 flex flex-row">
+      <div className="mt-8 gap-4 flex sm:flex-row flex-col">
         {quotes.map((quote, index) => (
           <motion.div
             key={index}

@@ -44,11 +44,11 @@ const Ongoing = () => {
         <div className={styles.sectionDescDiv}>We are looking for contributors &nbsp;\[&gt;.&lt;]/</div>
       </motion.div>
 
-      <div className="mt-6 space-y-4">
+      <div className="mt-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border border-spring rounded-lg p-4 bg-dark-blue"
+            className="border border-spring rounded-lg p-4 bg-dark-blue my-4"
             variants={fadeIn("up", "spring", index * 0.2, 1)}
           >
             <div className="flex sm:flex-row flex-col sm:justify-between sm:items-start">
@@ -69,7 +69,7 @@ const Ongoing = () => {
                 </div>
               </div>
               <button
-                className="z-20 px-4 py-2 sm:mt-0 mt-4 bg-[var(--primary)] rounded-md text-neutral-950 font-bold hover:bg-[var(--dark-celeste)] hover:text-white"
+                className="px-4 py-2 sm:mt-0 mt-4 bg-[var(--primary)] rounded-md text-neutral-950 font-bold hover:bg-[var(--dark-celeste)] hover:text-white"
                 onClick={() => toggleExpand(index)}
               >
                 {expandedCards[index] ? "Hide Details" : "Show Details"}
@@ -87,7 +87,7 @@ const Ongoing = () => {
                   href={project.contributeLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="z-20 block mt-2 text-[var(--spring)] hover:underline"
+                  className="block mt-2 text-[var(--spring)] hover:underline"
                 >
                   Contribute here
                 </a>

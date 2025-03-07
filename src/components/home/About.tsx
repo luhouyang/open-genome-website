@@ -7,7 +7,15 @@ import { fadeIn, textVariant } from "../../utils";
 import { SectionWrapper } from "../../hoc";
 import { Link } from "@tanstack/react-router";
 
-const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: string }> = ({ index, title, icon, link }) => {
+const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: string; color: string }> = ({
+  index,
+  title,
+  icon,
+  link,
+  color,
+}) => {
+  const textColor = `text-${color.split("-")[1]}`;
+
   return (
     <Link
       to={link}
@@ -23,7 +31,7 @@ const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: 
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-          className="w-full rgby-gradient p-[1px] rounded-[20px] shadow-card"
+          className={`${color} w-full p-[1px] rounded-[20px] shadow-card`}
         >
           <div className="bg-secondary rounded-[20px] py-4 px-12 lg:min-h-[280px] sm:min-h-[250px] min-h-[200px] flex justify-evenly items-center flex-col">
             <img
@@ -31,7 +39,7 @@ const ServiceCard: React.FC<{ index: number; title: string; icon: string; link: 
               alt={title}
               className="w-16 h-16 object-contain"
             />
-            <h3 className="text-primary md:text-xl sm:text-lg font-bold text-center">{title}</h3>
+            <h3 className={`${textColor} text-primary md:text-xl sm:text-lg font-bold text-center`}>{title}</h3>
           </div>
         </motion.div>
       </Tilt>
