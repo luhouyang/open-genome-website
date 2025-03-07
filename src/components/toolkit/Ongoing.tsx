@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../styles";
@@ -30,7 +30,7 @@ const Ongoing = () => {
   const toggleExpand = (index: number) => {
     setExpandedCards((prev) => ({
       ...prev,
-      [index]: !prev[index], // Toggle the state for the specific card
+      [index]: !prev[index],
     }));
   };
 
@@ -51,7 +51,7 @@ const Ongoing = () => {
             className="border border-spring rounded-lg p-4 bg-dark-blue"
             variants={fadeIn("up", "spring", index * 0.2, 1)}
           >
-            <div className="flex sm:flex-row flex-col justify-between items-center">
+            <div className="flex sm:flex-row flex-col sm:justify-between sm:items-start">
               <div>
                 <h3 className="text-xl font-bold text-celeste">{project.title}</h3>
                 <p className="text-grey-2">Group: {project.group}</p>
@@ -62,14 +62,14 @@ const Ongoing = () => {
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className={`w-4 h-4 mx-0.5 ${i < project.difficulty ? 'bg-[var(--imperial)]' : 'bg-[var(--medium-grey)]'}`}
+                        className={`w-4 h-4 mx-0.5 ${i < project.difficulty ? "bg-[var(--imperial)]" : "bg-[var(--medium-grey)]"}`}
                       ></div>
                     ))}
                   </div>
                 </div>
               </div>
               <button
-                className="z-20 px-4 py-2 bg-[var(--primary)] rounded-md text-neutral-950 font-bold hover:bg-[var(--dark-celeste)] hover:text-white"
+                className="z-20 px-4 py-2 sm:mt-0 mt-4 bg-[var(--primary)] rounded-md text-neutral-950 font-bold hover:bg-[var(--dark-celeste)] hover:text-white"
                 onClick={() => toggleExpand(index)}
               >
                 {expandedCards[index] ? "Hide Details" : "Show Details"}
@@ -87,7 +87,7 @@ const Ongoing = () => {
                   href={project.contributeLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block mt-2 text-[var(--primary)] hover:underline"
+                  className="z-20 block mt-2 text-[var(--spring)] hover:underline"
                 >
                   Contribute here
                 </a>
@@ -100,10 +100,4 @@ const Ongoing = () => {
   );
 };
 
-const LazyOngoing = () => (
-  <Suspense>
-    <Ongoing />
-  </Suspense>
-)
-
-export default SectionWrapper(LazyOngoing, "ongoing");
+export default SectionWrapper(Ongoing, "ongoing");

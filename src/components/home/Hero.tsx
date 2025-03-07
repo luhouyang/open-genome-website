@@ -7,7 +7,7 @@ import { herobg } from "../../assets";
 const Hero = () => {
   return (
     <section
-      className="relative w-full h-screen mx-auto bg-cover bg-center bg-no-repeat"
+      className="relative w-full md:h-screen sm:h-[50vh] h-[30vh] mx-auto bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${herobg})` }}
     >
       <div className={`${styles.paddingX} absolute inset-0 top-[60px] max-w-7xl mx-auto flex flex-row items-start gap-4`}>
@@ -25,9 +25,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <ShibaCanvasLazy />
-
-      {/* <div className="absolute xs:bottom-10 bottom-16 w-full flex justify-center items-center grey-1">
+      <div className="w-full md:h-screen sm:h-[50vh] h-[30vh] md:block hidden">
+        <ShibaCanvasLazy />
+        {/* <div className="absolute xs:bottom-10 bottom-16 w-full flex justify-center items-center grey-1">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 flex justify-center items-start p-1">
             <motion.div
@@ -38,28 +38,28 @@ const Hero = () => {
           </div>
         </a>
       </div> */}
-
-      <div className="absolute sm:top-[85vh] top-[75vh] w-full flex justify-center items-center">
-        <a href="#about">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
-            className="flex flex-col items-center"
-          >
-            <div className="group flex flex-col items-center">
-              <p className="group-hover:text-[var(--primary)]">CLICK ME!</p>
-              <div className="w-4 h-6 bg-[var(--smoke)] group-hover:bg-[var(--primary)]" />
-              <div className="w-8 h-6 relative mt-[-1px]">
-                <div
-                  className="absolute w-full h-full bg-[var(--smoke)] group-hover:bg-[var(--primary)] clip-path-triangle-down"
-                  style={{
-                    clipPath: "polygon(0% 0%, 100% 0%, 50% 100%)",
-                  }}
-                ></div>
+        <div className="absolute top-[85vh] w-full flex justify-center items-center">
+          <a href="#about">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+              className="flex flex-col items-center"
+            >
+              <div className="group flex flex-col items-center">
+                <p className="group-hover:text-[var(--primary)]">CLICK ME!</p>
+                <div className="w-4 h-6 bg-[var(--smoke)] group-hover:bg-[var(--primary)]" />
+                <div className="w-8 h-6 relative mt-[-1px]">
+                  <div
+                    className="absolute w-full h-full bg-[var(--smoke)] group-hover:bg-[var(--primary)] clip-path-triangle-down"
+                    style={{
+                      clipPath: "polygon(0% 0%, 100% 0%, 50% 100%)",
+                    }}
+                  ></div>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </a>
+            </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   );

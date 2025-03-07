@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Suspense } from "react";
 
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../styles";
@@ -25,10 +24,4 @@ const Changelog = () => {
   );
 };
 
-const LazyChangelog = () => (
-  <Suspense>
-    <Changelog />
-  </Suspense>
-);
-
-export default SectionWrapper(LazyChangelog, "contact");
+export default SectionWrapper(Changelog, "contact");

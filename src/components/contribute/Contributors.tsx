@@ -8,7 +8,7 @@ const Contributors = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <h2 className={styles.sectionHeadText}>Sign-Up</h2>
+        <h2 className={styles.sectionHeadText}>Contributors</h2>
       </motion.div>
 
       <motion.div variants={fadeIn("", "", 0.1, 1)}>

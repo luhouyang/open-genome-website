@@ -19,7 +19,7 @@ const services = [
   {
     title: "Learn XAI",
     icon: creator,
-    link: "/learn",
+    link: "/academy",
   },
 ];
 
