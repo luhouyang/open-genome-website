@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 
 import { SectionWrapper } from "../../hoc";
@@ -40,4 +41,10 @@ $ opengenome-hello
   );
 };
 
-export default SectionWrapper(Usage, "usage");
+const LazyUsage = () => (
+  <Suspense>
+    <Usage />
+  </Suspense>
+);
+
+export default SectionWrapper(LazyUsage, "usage");

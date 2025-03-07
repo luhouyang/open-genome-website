@@ -5,7 +5,7 @@ import { routeTree } from "./routeTree.gen";
 import Loading from "./components/Loading";
 
 // Create a new router instance
-const router = createRouter({ routeTree, defaultPendingComponent: Loading, defaultPreload: "intent" });
+const router = createRouter({ routeTree, defaultPendingComponent: Loading, defaultPreload: "intent", defaultComponent: Loading });
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../styles";
@@ -100,4 +100,10 @@ const Ongoing = () => {
   );
 };
 
-export default SectionWrapper(Ongoing, "ongoing");
+const LazyOngoing = () => (
+  <Suspense>
+    <Ongoing />
+  </Suspense>
+)
+
+export default SectionWrapper(LazyOngoing, "ongoing");
