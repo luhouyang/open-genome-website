@@ -12,6 +12,9 @@ const Footer = () => {
             <Link
               to="/"
               className="items-center gap-2 mb-4"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
             >
               <img
                 src={logo}
@@ -20,7 +23,7 @@ const Footer = () => {
               />
               <p className="text-secondary font-bold">Open-Genome Project</p>
             </Link>
-            <p className="text-gray-200 text-sm">
+            <p className="grey-1 text-sm">
               The Open-Genome Project aims to democratize AI genome research through open source, collaborative tools, and
               accessible education.
             </p>
@@ -34,6 +37,9 @@ const Footer = () => {
                 <Link
                   to="/"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Home
                 </Link>
@@ -42,6 +48,9 @@ const Footer = () => {
                 <Link
                   to="/database"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Database
                 </Link>
@@ -50,6 +59,9 @@ const Footer = () => {
                 <Link
                   to="/toolkit"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Toolkit
                 </Link>
@@ -58,6 +70,9 @@ const Footer = () => {
                 <Link
                   to="/contribute"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Contribute
                 </Link>
@@ -66,6 +81,9 @@ const Footer = () => {
                 <Link
                   to="/learn"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Learn
                 </Link>
@@ -74,6 +92,9 @@ const Footer = () => {
                 <Link
                   to="/login"
                   className="text-gray-300 hover:text-white text-sm"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   Login
                 </Link>

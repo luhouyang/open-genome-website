@@ -14,39 +14,38 @@
   --celeste: #b2ffff;
   --spring: #00ee7e;
   --canary: #ffff99;
+
+  --dark-blue: #00001c;
+  --smoke: #f5f5f5;
+  --drwhite: #d5d5d5;
+
+  --primary: #b2ffff;
 }
 
 .imperial {
   color: #ed2929;
 }
-
 .celeste {
   color: #b2ffff;
 }
-
 .dark-celeste {
   color: #427799;
 }
-
 /* spring green */
 .spring {
   color: #00ee7e;
 }
-
 .dark-spring {
   color: #007a4a;
 }
-
 /* light canary */
 .canary {
   color: #ffff99;
 }
-
 /* white smoke */
 .smoke {
   color: #f5f5f5;
 }
-
 /* dr. white */
 .drwhite {
   color: #fafafa;
@@ -56,11 +55,9 @@
 .primary {
   color: #b2ffff;
 }
-
 .grey-1 {
   color: #f5f5f5;
 }
-
 .grey-2 {
   color: #d5d5d5;
 }
@@ -69,30 +66,51 @@
 .text-primary {
   color: #b2ffff;
 }
-
 .text-secondary {
   color: #f5f5f5;
+}
+.text-grey-2 {
+  color: #d5d5d5;
+}
+.text-imperial {
+  color: var(--imperial);
+}
+.text-celeste {
+  color: var(--celeste);
+}
+.text-spring {
+  color: var(--spring);
+}
+.text-canary {
+  color: var(--canary);
+}
+.text-drwhite {
+  color: var(--drwhite);
+}
+
+/* BORDER */
+.border-spring {
+  border-color: var(--spring);
 }
 
 /* BG */
 .bg-primary {
   background-color: #427799;
 }
-
 .bg-secondary {
   background-color: #00001c;
 }
-
 .bg-grey-1 {
   background-color: #f5f5f5;
 }
-
 .bg-grey-2 {
   background-color: #d5d5d5;
 }
-
 .bg-dark-spring {
   background-color: #007a4a;
+}
+.bg-dark-blue {
+  background-color: var(--dark-blue);
 }
 
 /* OTHERS */

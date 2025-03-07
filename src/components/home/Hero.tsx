@@ -12,7 +12,7 @@ const Hero = () => {
     >
       <div className={`${styles.paddingX} absolute inset-0 top-[60px] max-w-7xl mx-auto flex flex-row items-start gap-4`}>
         <div className="flex flex-col justify-center items-center">
-          <div className="w-4 h-4 rounded-full bg-[#b2ffff]" />
+          <div className="w-4 h-4 rounded-full bg-[var(--primary)]" />
           <div className="w-1 sm:h-80 h-40 blue-gradient" />
         </div>
 
@@ -46,14 +46,17 @@ const Hero = () => {
             transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
             className="flex flex-col items-center"
           >
-            <div className="w-4 h-6 bg-grey-1" />
-            <div className="w-8 h-6 relative mt-[-1px]">
-              <div
-                className="absolute w-full h-full bg-grey-1 clip-path-triangle-down"
-                style={{
-                  clipPath: "polygon(0% 0%, 100% 0%, 50% 100%)",
-                }}
-              ></div>
+            <div className="group flex flex-col items-center">
+              <p className="group-hover:text-[var(--primary)]">CLICK ME!</p>
+              <div className="w-4 h-6 bg-[var(--smoke)] group-hover:bg-[var(--primary)]" />
+              <div className="w-8 h-6 relative mt-[-1px]">
+                <div
+                  className="absolute w-full h-full bg-[var(--smoke)] group-hover:bg-[var(--primary)] clip-path-triangle-down"
+                  style={{
+                    clipPath: "polygon(0% 0%, 100% 0%, 50% 100%)",
+                  }}
+                ></div>
+              </div>
             </div>
           </motion.div>
         </a>

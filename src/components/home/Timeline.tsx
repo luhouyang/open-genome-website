@@ -26,11 +26,11 @@ const MilestoneCard: FC<MilestoneCardProps> = ({ milestone }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#00001c",
-        color: "#f5f5f5",
+        background: "var(--dark-blue)",
+        color: "var(--smoke)",
       }}
       contentArrowStyle={{
-        borderRight: "8px solid #f5f5f5",
+        borderRight: "8px solid var(--smoke)",
       }}
       date={milestone.date}
       icon={
