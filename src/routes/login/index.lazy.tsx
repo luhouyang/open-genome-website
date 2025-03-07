@@ -1,9 +1,11 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 import { About, Authentication } from "../../components/login";
+import Loading from "../../components/Loading";
 
 export const Route = createLazyFileRoute("/login/")({
   component: Login,
+  pendingComponent: Loading
 });
 
 function Login() {

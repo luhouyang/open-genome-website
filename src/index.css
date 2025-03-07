@@ -8,6 +8,14 @@
   color-scheme: dark;
 }
 
+:root {
+  /* Define color variables for easier management */
+  --imperial: #ed2929;
+  --celeste: #b2ffff;
+  --spring: #00ee7e;
+  --canary: #ffff99;
+}
+
 .imperial {
   color: #ed2929;
 }
@@ -115,36 +123,168 @@
   background: #ed2929 !important; /* Imperial Red */
 }
 
-/* canvas- styles */
+/* Circular loader with color cycling */
 .canvas-loader {
   font-size: 12px;
   width: 1.2em;
   height: 1.2em;
   border-radius: 50%;
-  background-color: transparent;
-  border: 3px solid #b2ffff;
-  border-top-color: transparent;
   position: relative;
   text-indent: -9999em;
-  animation: mulShdSpin 1s infinite linear;
+  animation:
+    mulShdSpin 1.2s infinite ease,
+    loader-color-cycle 6s linear infinite;
   transform: translateZ(0);
+
+  /* Custom Properties for easy customization */
+  --loader-color: var(--celeste);
+  --loader-size: 1.2em;
+  --animation-duration: 1.2s;
+}
+
+/* Color cycling animation for both loaders */
+@keyframes loader-color-cycle {
+  0%,
+  24.99% {
+    --loader-color: var(--celeste);
+  }
+  25%,
+  49.99% {
+    --loader-color: var(--spring);
+  }
+  50%,
+  74.99% {
+    --loader-color: var(--canary);
+  }
+  75%,
+  100% {
+    --loader-color: var(--imperial);
+  }
 }
 
 @keyframes mulShdSpin {
-  0% {
-    transform: rotate(0deg);
+  0%,
+  100% {
     box-shadow:
-      0em -2.6em 0em 0em #b2ffff,
-      1.8em -1.8em 0 0em rgba(178, 255, 255, 0.7),
-      2.5em 0em 0 0em rgba(178, 255, 255, 0.5),
-      1.75em 1.75em 0 0em rgba(178, 255, 255, 0.3);
+      0 -2.6em 0 0 var(--loader-color),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent);
+  }
+  12.5% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      1.8em -1.8em 0 0 var(--loader-color),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent);
+  }
+  25% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      2.5em 0 0 0 var(--loader-color),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent);
+  }
+  37.5% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      1.75em 1.75em 0 0 var(--loader-color),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      0 2.5em 0 0 var(--loader-color),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent);
+  }
+  62.5% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      -1.8em 1.8em 0 0 var(--loader-color),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent);
+  }
+  75% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      -2.6em 0 0 0 var(--loader-color),
+      -1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent);
+  }
+  87.5% {
+    box-shadow:
+      0 -2.6em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.8em -1.8em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      2.5em 0 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      1.75em 1.75em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      0 2.5em 0 0 color-mix(in srgb, var(--loader-color) 20%, transparent),
+      -1.8em 1.8em 0 0 color-mix(in srgb, var(--loader-color) 50%, transparent),
+      -2.6em 0 0 0 color-mix(in srgb, var(--loader-color) 70%, transparent),
+      -1.8em -1.8em 0 0 var(--loader-color);
+  }
+}
+
+/* Letter-by-letter typing animation for loading text */
+.loading-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+  color: var(--loader-color);
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--loader-color);
+  animation:
+    typing 1.5s steps(9, end) infinite,
+    loader-color-cycle 6s linear infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 9ch; /* Full text 'Loading . . .' */
+  }
+  90% {
+    width: 9ch; /* Keep full text visible */
+    border-right-color: transparent;
   }
   100% {
-    transform: rotate(360deg);
-    box-shadow:
-      0em -2.6em 0em 0em rgba(178, 255, 255, 0.3),
-      1.8em -1.8em 0 0em rgba(178, 255, 255, 0.5),
-      2.5em 0em 0 0em rgba(178, 255, 255, 0.7),
-      1.75em 1.75em 0 0em #b2ffff;
+    width: 0; /* Reset to start again */
+    border-right-color: transparent;
   }
 }

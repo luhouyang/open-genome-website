@@ -1,9 +1,11 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 import { About, Quotes, Documents, Signup, Contributors } from "../../components/contribute";
+import Loading from "../../components/Loading";
 
 export const Route = createLazyFileRoute("/contribute/")({
   component: Contribute,
+  pendingComponent: Loading
 });
 
 function Contribute() {

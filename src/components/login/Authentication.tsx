@@ -11,7 +11,7 @@ const Authentication = () => {
           href="#"
           className={`${styles.celesteButton} max-w-[135px] ${userToggle ? "" : "bg-grey-2"}`}
           onClick={() => {
-            setUserToggle(!userToggle);
+            setUserToggle(true);
           }}
         >
           User
@@ -20,7 +20,7 @@ const Authentication = () => {
           href="#"
           className={`${styles.springButton} ${userToggle ? "bg-grey-2" : ""}`}
           onClick={() => {
-            setUserToggle(!userToggle);
+            setUserToggle(false);
           }}
         >
           Contributor
