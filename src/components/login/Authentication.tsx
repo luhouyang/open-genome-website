@@ -1,22 +1,27 @@
+import { useState } from "react";
 import { styles } from "../../styles";
 
 const Authentication = () => {
+  const [userToggle, setUserToggle] = useState(true);
+
   return (
-    <div className="w-full flex flex-col items-center">
-      <div className="flex flex-row w-[400px] justify-evenly mt-8">
+    <div className={`${styles.aboutPageTitle} px-4`}>
+      <div className="flex flex-row justify-center items-center bg-grey-2 rounded-full">
         <a
-          href="https://github.com/luhouyang/opengenome.git"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.celesteButton}`}
+          href="#"
+          className={`${styles.celesteButton} max-w-[135px] ${userToggle ? "" : "bg-grey-2"}`}
+          onClick={() => {
+            setUserToggle(!userToggle);
+          }}
         >
           User
         </a>
         <a
-          href="https://opengenome.readthedocs.io/en/latest/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.springButton}`}
+          href="#"
+          className={`${styles.springButton} ${userToggle ? "bg-grey-2" : ""}`}
+          onClick={() => {
+            setUserToggle(!userToggle);
+          }}
         >
           Contributor
         </a>

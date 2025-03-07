@@ -8,7 +8,7 @@ const About = () => {
     <>
       <div className={`${styles.aboutPageTitle}`}>
         <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Login</h2>
+          <h2 className={`${styles.sectionHeadText}`}>Login</h2>
         </motion.div>
       </div>
     </>

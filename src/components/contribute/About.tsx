@@ -6,9 +6,9 @@ import { styles } from "../../styles";
 const About = () => {
   return (
     <>
-      <div className={`${styles.aboutPageTitle} canary`}>
+      <div className={`${styles.aboutPageTitle}`}>
         <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Contribute &nbsp;\[&gt;.&lt;] /</h2>
+          <h2 className={`${styles.sectionHeadText} canary`}>Contribute &nbsp;\[&gt;.&lt;] /</h2>
         </motion.div>
 
         <motion.div

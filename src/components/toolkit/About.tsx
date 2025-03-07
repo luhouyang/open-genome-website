@@ -6,9 +6,9 @@ import { styles } from "../../styles";
 const About = () => {
   return (
     <>
-      <div className={`${styles.aboutPageTitle} spring`}>
+      <div className={`${styles.aboutPageTitle}`}>
         <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Open-Genome Toolkit</h2>
+          <h2 className={`${styles.sectionHeadText} spring`}>Open-Genome Toolkit</h2>
         </motion.div>
 
         <motion.div
@@ -18,7 +18,7 @@ const About = () => {
           All-in-One AI model analysis toolkit and data preparation pipeline for the Open-Genome Project.
         </motion.div>
 
-        <div className="flex flex-row w-[400px] justify-evenly mt-8">
+        <div className="flex flex-col sm:flex-row justify-evenly items-center mt-8 px-4 gap-4">
           <a
             href="https://github.com/luhouyang/opengenome.git"
             target="_blank"

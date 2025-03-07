@@ -79,6 +79,14 @@
   background-color: #f5f5f5;
 }
 
+.bg-grey-2 {
+  background-color: #d5d5d5;
+}
+
+.bg-dark-spring {
+  background-color: #007a4a;
+}
+
 /* OTHERS */
 .hash-span {
   margin-top: -100px;
