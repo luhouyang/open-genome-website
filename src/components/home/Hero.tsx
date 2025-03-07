@@ -518,7 +518,7 @@ const Hero: React.FC = () => {
               <h1 className={`${styles.heroHeadText}`}>
                 <span className="text-[var(--primary)]">Open-Genome Project</span>
               </h1>
-              <p className={`${styles.heroDescText} text-secondary mt-4 max-w-2xl`}>
+              <p className={`${styles.heroDescText} text-secondary mt-4 max-w-3xl`}>
                 An open-source genome database for all types of AI models.
               </p>
             </div>
@@ -555,7 +555,7 @@ const Hero: React.FC = () => {
               <h3 className="text-secondary font-bold">Controls Guide</h3>
               <button
                 onClick={dismissInstructions}
-                className="text-secondary hover:text-imperial"
+                className="text-secondary hover:text-imperial cursor-pointer"
               >
                 ✕
               </button>
@@ -584,7 +584,7 @@ const Hero: React.FC = () => {
             <select
               value={attractor}
               onChange={(e) => setAttractor(e.target.value as AttractorType)}
-              className="bg-transparent text-secondary mb-4 block w-full border border-[var(--celeste)]/60 rounded px-2 py-1"
+              className="bg-transparent text-secondary mb-4 block w-full border border-[var(--celeste)]/60 rounded px-2 py-1 cursor-pointer"
               style={{ color: COLORS.celeste }}
             >
               {["lorenz", "thomas", "aizawa", "dadras", "halvorsen", "rossler", "fourWing"].map((type) => (
@@ -612,7 +612,7 @@ const Hero: React.FC = () => {
                 step="0.001"
                 value={divergence}
                 onChange={(e) => setDivergence(Number(e.target.value))}
-                className="w-32 celeste-slider"
+                className="w-32 celeste-slider cursor-pointer"
               />
             </div>
 
@@ -630,7 +630,7 @@ const Hero: React.FC = () => {
                 step="1"
                 value={numTrajectories}
                 onChange={(e) => setNumTrajectories(Number(e.target.value))}
-                className="w-32 celeste-slider"
+                className="w-32 celeste-slider cursor-pointer"
               />
             </div>
 
@@ -648,7 +648,7 @@ const Hero: React.FC = () => {
                 step="100"
                 value={trailLength}
                 onChange={(e) => setTrailLength(Number(e.target.value))}
-                className="w-32 celeste-slider"
+                className="w-32 celeste-slider cursor-pointer"
               />
             </div>
 
@@ -656,7 +656,7 @@ const Hero: React.FC = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleTransformControls}
-                className={`px-3 py-1 rounded text-secondary text-sm ${
+                className={`px-3 py-1 rounded text-secondary text-sm cursor-pointer ${
                   showTransformControls ? "bg-[var(--dark-celeste)]/30 text-secondary" : "bg-[var(--drwhite)]/30"
                 }`}
               >
@@ -667,7 +667,7 @@ const Hero: React.FC = () => {
               {!showInstructions && (
                 <button
                   onClick={() => setShowInstructions(true)}
-                  className="px-3 py-1 rounded text-secondary text-sm bg-[var(--dark-celeste)]/30"
+                  className="px-3 py-1 rounded text-secondary cursor-pointer text-sm bg-[var(--dark-celeste)]/30"
                 >
                   ?
                 </button>
