@@ -4,7 +4,7 @@ import { logo } from "../assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary w-full py-8 px-4 mt-16">
+    <footer className="relative bg-primary w-full py-8 px-4 mt-16 z-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}

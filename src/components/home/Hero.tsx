@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, TransformControls } from "@react-three/drei";
 import * as THREE from "three";
 import { styles } from "../../styles";
+import { motion } from "framer-motion";
 
 type AttractorType = "lorenz" | "thomas" | "aizawa" | "dadras" | "halvorsen" | "rossler" | "fourWing";
 
@@ -504,7 +505,7 @@ const Hero: React.FC = () => {
   `;
 
   return (
-    <section className="relative w-full xl:h-[97.5vh] sm:h-[85vh] h-[40vh]">
+    <section className="relative w-full sm:h-[90vh] h-[45vh]">
       {/* Inject custom slider styles */}
       <style>{sliderStyle}</style>
 
@@ -674,6 +675,29 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="z-1 group absolute bottom-[-10px] w-full flex justify-center items-center">
+        <a
+          href="#about"
+          onClick={showTransformControls ? toggleTransformControls : () => {}}
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+            className="flex flex-col items-center"
+          >
+            <div className="w-4 h-6 group-hover:bg-[var(--celeste)] bg-[var(--smoke)]" />
+            <div className="w-8 h-6 relative mt-[-1px]">
+              <div
+                className="absolute w-full h-full group-hover:bg-[var(--celeste)] bg-[var(--smoke)] clip-path-triangle-down"
+                style={{
+                  clipPath: "polygon(0% 0%, 100% 0%, 50% 100%)",
+                }}
+              ></div>
+            </div>
+          </motion.div>
+        </a>
       </div>
     </section>
   );
