@@ -1,9 +1,11 @@
 import { StrictMode } from "react";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
+
 import { routeTree } from "./routeTree.gen";
+import Loading from "./components/Loading";
 
 // Create a new router instance
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree, defaultPendingComponent: Loading, defaultPreload: "intent" });
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
