@@ -65,6 +65,7 @@ interface AttractorTrajectoriesProps {
   numTrajectories: number;
   pointsPerTrajectory: number;
   trailFadeLength?: number;
+  isMobile: boolean;
 }
 
 // Attractor trajectories component with forwarded ref
@@ -76,6 +77,7 @@ const AttractorTrajectories = forwardRef<THREE.Group, AttractorTrajectoriesProps
       numTrajectories = 16,
       pointsPerTrajectory = 3000,
       trailFadeLength = 1000, // How many points in the fading trail
+      isMobile = false,
     }: AttractorTrajectoriesProps,
     ref
   ) => {
@@ -334,7 +336,7 @@ const AttractorTrajectories = forwardRef<THREE.Group, AttractorTrajectoriesProps
           </bufferGeometry>
           <lineBasicMaterial
             color={colorArray[index % colorArray.length]}
-            linewidth={1}
+            linewidth={isMobile ? 0.2 : 1}
           />
         </line>
       );
@@ -366,7 +368,7 @@ const AttractorTrajectories = forwardRef<THREE.Group, AttractorTrajectoriesProps
           </bufferGeometry>
           <LineMaterial
             color={trailColor}
-            linewidth={1}
+            linewidth={isMobile ? 0.2 : 1}
             transparent={true}
             opacity={0.2}
             vertexColors={true}
@@ -410,6 +412,7 @@ interface AttractorSceneProps {
   pointsPerTrajectory: number;
   trailFadeLength: number;
   showTransformControls: boolean;
+  isMobile: boolean;
 }
 
 // Modified AttractorScene component that won't reset animations when toggling controls
@@ -420,6 +423,7 @@ const AttractorScene: React.FC<AttractorSceneProps> = ({
   pointsPerTrajectory,
   trailFadeLength,
   showTransformControls,
+  isMobile = false,
 }) => {
   // Create a persistent reference to the AttractorTrajectories component
   const attractorRef = useRef<THREE.Group>(null);
@@ -442,16 +446,17 @@ const AttractorScene: React.FC<AttractorSceneProps> = ({
         numTrajectories={numTrajectories}
         pointsPerTrajectory={pointsPerTrajectory}
         trailFadeLength={trailFadeLength}
+        isMobile={isMobile}
       />
 
       {/* Conditionally render the TransformControls as a wrapper */}
-      {showTransformControls && attractorRef.current ? (
+      {!isMobile && showTransformControls && attractorRef.current ? (
         <TransformControls
           object={attractorRef.current}
           mode="translate"
         />
       ) : (
-        showTransformControls && attractorRef.current == null && <TransformControls mode="translate" />
+        !isMobile && showTransformControls && attractorRef.current == null && <TransformControls mode="translate" />
       )}
     </>
   );
@@ -464,6 +469,35 @@ const Hero: React.FC = () => {
   const [trailLength, setTrailLength] = useState(1000);
   const [showTransformControls, setShowTransformControls] = useState(true);
   const [showInstructions, setShowInstructions] = useState(true);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    // Initial check
+    setIsMobile(mediaQuery.matches);
+
+    // Event listener callback
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add event listener with proper fallback
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleMediaQueryChange);
+    } else {
+      mediaQuery.addListener(handleMediaQueryChange); // Fallback for older browsers
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      } else {
+        mediaQuery.removeListener(handleMediaQueryChange);
+      }
+    };
+  }, []);
 
   // Function to toggle transform controls (doesn't reset animation)
   const toggleTransformControls = () => {
@@ -518,7 +552,7 @@ const Hero: React.FC = () => {
               <h1 className={`${styles.heroHeadText}`}>
                 <span className="text-[var(--primary)]">Open-Genome Project</span>
               </h1>
-              <p className={`${styles.heroDescText} text-secondary mt-4 max-w-3xl`}>
+              <p className={`${styles.heroDescText} text-secondary mt-4 max-w-4xl`}>
                 An open-source genome database for all types of AI models.
               </p>
             </div>
@@ -542,15 +576,16 @@ const Hero: React.FC = () => {
               pointsPerTrajectory={3000}
               trailFadeLength={trailLength}
               showTransformControls={showTransformControls}
+              isMobile={isMobile}
             />
           </Suspense>
         </Canvas>
       </div>
 
-      <div className="sm:block hidden">
+      <div className={`${isMobile ? "hidden" : ""}`}>
         {/* Instructions Popup */}
         {showInstructions && (
-          <div className="absolute bottom-8 right-8 z-20 bg-[var(--smoke)]/10 p-4 rounded-xl backdrop-blur-sm max-w-xs">
+          <div className="absolute bottom-8 right-8 z-10 bg-[var(--smoke)]/10 p-4 rounded-md backdrop-blur-sm max-w-xs">
             <div className="flex justify-between items-start mb-2">
               <h3 className="text-secondary font-bold">Controls Guide</h3>
               <button
@@ -572,7 +607,7 @@ const Hero: React.FC = () => {
               </li>
               <li>
                 <span className="font-medium">Move Object:</span> Hold{" "}
-                <span className="bg-[var(--dark-celeste)]/45 px-1 rounded">Shift</span> + drag colored arrows
+                <span className="bg-[var(--dark-celeste)]/45 px-1 rounded-sm">Shift</span> + drag colored arrows
               </li>
             </ul>
           </div>
@@ -580,7 +615,7 @@ const Hero: React.FC = () => {
 
         {/* Interactive Controls */}
         <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-4">
-          <div className="bg-[var(--smoke)]/10 p-4 rounded-xl backdrop-blur-sm">
+          <div className="bg-[var(--smoke)]/10 p-4 rounded-md backdrop-blur-sm">
             <select
               value={attractor}
               onChange={(e) => setAttractor(e.target.value as AttractorType)}

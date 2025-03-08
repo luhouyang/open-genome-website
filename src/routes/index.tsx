@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="relative">
+    <div className="relative bg-black">
       <Hero />
       <About />
       <Timeline />

@@ -12,7 +12,7 @@ const Contact = () => {
       </motion.div>
 
       <motion.div variants={fadeIn("", "", 0.1, 1)}>
-        <div className={`${styles.sectionDescDiv}`}>FORMS</div>
+        <div className={`${styles.sectionDescDiv} bg-[var(--smoke)]/10 py-2 px-4 rounded-md backdrop-blur-sm`}>FORMS</div>
       </motion.div>
     </>
   );

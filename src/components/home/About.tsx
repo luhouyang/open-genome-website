@@ -57,7 +57,7 @@ const About = () => {
 
       <motion.div
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary"
+        className="mt-4 text-secondary bg-[var(--smoke)]/10 py-2 px-4 rounded-md backdrop-blur-sm"
       >
         Open-Genome Project (OGP) is an open-source genome database for all types of AI models, using XAI techniques. We aim to
         map out areas of interest in various AI models that contribute to the skill & behaviour of AI models. Help researchers, ML
