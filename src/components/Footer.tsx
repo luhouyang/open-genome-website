@@ -170,10 +170,10 @@ const Footer = () => {
                   />
                 </svg>
                 <a
-                  href="mailto:luhouyang@gmail.com"
+                  href="mailto:luhouyang@open-genome-project.org"
                   className="text-gray-300 hover:text-white text-sm"
                 >
-                  luhouyang@gmail.com
+                  luhouyang@open-genome-project.org
                 </a>
               </li>
               <li className="flex items-center gap-2">
