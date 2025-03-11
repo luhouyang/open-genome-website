@@ -539,7 +539,7 @@ const Hero: React.FC = () => {
   `;
 
   return (
-    <section className="relative w-full sm:h-[90vh] h-[45vh]">
+    <section className="relative w-full sm:h-[90vh] h-[55vh]">
       {/* Inject custom slider styles */}
       <style>{sliderStyle}</style>
 
