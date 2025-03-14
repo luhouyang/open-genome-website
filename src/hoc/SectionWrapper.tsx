@@ -3,7 +3,7 @@ import { ComponentType, Suspense } from "react";
 
 import { styles } from "../styles";
 import { staggerContainer } from "../utils";
-import Loading from "../components/Loading";
+import Loading from "../components/common/Loading";
 
 const SectionWrapper = <P extends object>(Component: ComponentType<P>, idName: string) => {
   return (props: P) => (

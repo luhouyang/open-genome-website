@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import Loading from "../../components/Loading";
+import Loading from "../../components/common/Loading";
 
 export const Route = createFileRoute("/academy/$aritcleId")({
   component: ArticleComponent,
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/academy/$aritcleId")({
     };
   },
   pendingComponent: () => Loading,
-  errorComponent: () => <div>oopsie . . . something broken</div>
+  errorComponent: () => <div>oopsie . . . something broken</div>,
 });
 
 function ArticleComponent() {

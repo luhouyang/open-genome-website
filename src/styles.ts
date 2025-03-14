@@ -14,6 +14,9 @@ const styles = {
   aboutPageTitle: "pt-8 w-full flex flex-col items-center px-4",
   aboutPageSubTitle: "mt-2 text-secondary max-w-[590px]",
 
+  errorText: "text-[12px] mt-2 imperial",
+  errorCard: "my-2 imperial border rounded-md p-4 font-bold",
+
   celesteButton:
     "z-20 bg-[#b2ffff] hover:bg-[#427799] hover:text-white w-[155px] h-[50px] flex justify-center items-center text-neutral-950 font-bold text-xl rounded-full",
   springButton:

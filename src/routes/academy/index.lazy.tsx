@@ -1,11 +1,11 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 import { About, Articles } from "../../components/academy";
-import Loading from "../../components/Loading";
+import Loading from "../../components/common/Loading";
 
 export const Route = createLazyFileRoute("/academy/")({
   component: Academy,
-  pendingComponent: Loading
+  pendingComponent: Loading,
 });
 
 function Academy() {

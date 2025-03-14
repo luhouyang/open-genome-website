@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../styles";
 import { fadeIn, textVariant } from "../../utils";
-import MarkdownRenderer from "../MarkdownRenderer";
+import MarkdownRenderer from "../common/MarkdownRenderer";
 
 const Usage = () => {
   const markdown = `## Installation

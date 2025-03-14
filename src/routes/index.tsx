@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Hero, About, Timeline, Contact } from "../components/home";
-import Loading from "../components/Loading";
+import Loading from "../components/common/Loading";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  pendingComponent: Loading
+  pendingComponent: Loading,
 });
 
 function Home() {
